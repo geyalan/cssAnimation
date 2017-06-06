@@ -1,0 +1,27 @@
+.conse{
+	display:block;
+	position:absolute;
+	left:10%;
+	top:100px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;'
+/*	-webkit-transform: rotateX(-33.5deg) rotateY(45deg);
+	-ms-transform: rotateX(-33.5deg) rotateY(45deg);
+	-o-transform: rotateX(-33.5deg) rotateY(45deg);*/
+	transform:rotateY(35deg);
+}
+.conse>div{
+	position:absolute;
+	top:0;
+	z-index:10;
+	border-left:28.8675px solid transparent;
+	border-right:28.8675px solid transparent;
+	border-bottom:50px solid #ccc;
+}
+.conse .top{
+	
+}
+
+
