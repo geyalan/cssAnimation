@@ -1,0 +1,38 @@
+.ball{
+	display:block;
+	position:absolute;
+	top:100px;
+	left:70%;
+	transform-style: preserve-3d;
+	transform:rotateX(-15deg) rotateY(70deg);
+	animation: ballRotate 6s ease-in-out infinite 2s;
+}
+.ball>div{
+	width:50px;
+	height:50px;
+	position:absolute;
+	left:0;
+	top:0;
+	border-radius: 100%;
+	background:radial-gradient(transparent 30%,rgba(0,0,0,.1) 100%);
+}
+.ball .a{
+	transform: rotateY(-90deg);
+}
+.ball .b{
+	transform: rotateY(45deg);
+}
+.ball .c{
+	transform:rotateY(225deg);
+}
+.ball .d{
+	transform:rotateY(315deg);
+}
+@keyframes ballRotate{
+	0%{
+		transform:rotateX(-15deg) rotateY(70deg);
+	}
+	100%{
+		transform: rotateX(-15deg) rotateY(430deg);
+	}
+}
