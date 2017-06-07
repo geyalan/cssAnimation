@@ -1,0 +1,219 @@
+.demo-loading{
+	width:100%;
+	height:200px;
+	background:#fff;
+	zoom:2;
+	position:relative;
+}
+.load1{
+	position:absolute;
+	width:25px;
+	height:25px;
+	top:50%;
+	left:30%;
+	transform:translateX(-12.5px) translateY(-12.5px);
+	-webkit-transform:translateX(-12.5px) translateY(-12.5px);
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.load1-x{
+	width:20px;
+	height:20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border:2px solid #2196f3;
+	border-radius:50%;
+	border-top-color:transparent;
+	border-bottom-color:transparent;
+	animation: anisix-x 1s ease-in-out 0.2s infinite;
+	-webkit-animation:anisix-x 1s ease-in-out 0.2s infinite;
+}
+.load1-y{
+	width:10px;
+	height:10px;
+	border-radius: 50%;
+	background-color:#2196f3;
+	animation:anisix-y 1s ease-in-out 0.2s infinite;
+	-webkit-animation:anisix-y 1s ease-in-out 0.2s infinite;
+}
+
+@keyframes anisix-x{
+	0%{
+		transform: rotate(0deg);
+	}
+	50%{
+		transform: rotate(180deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes anisix-x{
+	0%{
+		-webkit-transform: rotate(0deg);
+	}
+	50%{
+		-webkit-transform: rotate(180deg);
+	}
+	100%{
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes anisix-y{
+	0%{
+		transform: scale(0.1);
+	}
+	50%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(0.1);
+	}
+}
+@-webkit-keyframes anisix-y{
+	0%{
+		-webkit-transform: scale(0.1);
+	}
+	50%{
+		-webkit-transform: scale(1);
+	}
+	100%{
+		-webkit-transform: scale(0.1);
+	}
+}
+
+
+.load2{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:25px;
+	height:50px;
+	transform: translate(-12.5px,-12.5px);
+	-webkit-transform:translate(-12.5px,-12.5px);
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.load2-x{
+	position: absolute;
+	left:0;
+	top:0;
+	border-radius: 100%;
+	width:25px;
+	height:25px;
+	background:radial-gradient(transparent 10%,rgba(33,150,243,0.9) 100%);
+	animation: aniTwo 1s ease infinite 0s;
+	-webkit-animation:aniTwo 1s ease infinite 0s;
+}
+.load2-y{
+	position:absolute;
+	left:1px;
+	top:1px;
+	border-radius:100%;
+	width:23px;
+	height:23px;
+	background:radial-gradient(transparent 10%,rgba(33,150,243,0.8) 100%);
+	animation: aniTwo 1s ease infinite 0.2s;
+	-webkit-animation: aniTwo 1s ease infinite 0.2s;
+}
+.load2-z{
+	position:absolute;
+	left:2.5px;
+	top:2.5px;
+	width:20px;
+	height:20px;
+	border-radius:100%;
+	background:radial-gradient(transparent 10%,rgba(33,150,243,0.7) 100%);
+	animation: aniTwo 1s ease infinite 0.3s;
+	-webkit-animation: aniTwo 1s ease infinite 0.3s;
+}
+.load2-m{
+	position:absolute;
+	left:0;
+	top:0;
+	width:25px;
+	height:25px;
+	border-radius:100%;
+	background:radial-gradient(transparent 10%,rgba(33,150,243,0.7) 100%);
+	animation: aniTwo 1s ease infinite 0.4s;
+	-webkit-animation: aniTwo 1s ease infinite 0.4s;
+}
+@keyframes aniTwo{
+	0%{
+		transform: scale(0.1);
+		opacity:1;
+	}
+	100%{
+		transform: scale(1.2);
+		opacity: 0.2;
+	}
+}
+@-webkit-keyframes aniTwo{
+	0%{
+		-webkit-transform:scale(0.1);
+		opacity: 1;
+	}
+	100%{
+		-webkit-transform:scale(1.2);
+		opacity: 0.2;
+	}
+}
+
+.load3{
+	position:absolute;
+	top:50%;
+	left:70%;
+	width:45px;
+	height:45px;
+	padding-top:10px;
+	transform:translate(-22.5px,-22.5px);
+	-webkit-transform:translate(-22.5px,-22.5px);
+}
+.load3>div{
+	width:10px;
+	height:10px;
+	margin-right:5px;
+	margin-bottom: 5px;
+	border-radius:100%;
+	background-color:#2196f3;
+	filter:blur(2px);
+	-webkit-filter:blur(2px);
+	float:left;
+}
+.load3 .load3-a,.load3 .load3-f,.load3 .load3-h{
+	animation: aniTen-e 1s linear 0s infinite;
+	-webkit-animation:aniTen-e 1s linear 0s infinite;
+}
+.load3 .load3-b,.load3 .load3-d,.load3-i{
+	animation: aniTen-e 1s linear 0.15s infinite;
+	-webkit-animation: aniTen-e 1s linear 0.15s infinite;
+}
+.load3 .load3-c,.load3 .load3-e,.load3 .load3-g{
+	animation: aniTen-e 1s linear 0.3s infinite;
+	-webkit-animation: aniTen-e 1s linear 0.3s infinite;
+}
+
+
+@keyframes aniTen-e{
+	0%{
+		opacity: 0.1;
+		transform: scale(1.2);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(0.4);
+	}
+}
+@-webkit-keyframes aniTen-e{
+	0%{
+		opacity: 0.1;
+		-webkit-transform: scale(1.2);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: scale(0.4);
+	}
+}
