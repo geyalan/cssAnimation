@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="css3妙用，css3图形" name="keywords">
+	<title>css3图形</title>
+	<link href="../css/graph.css" type="text/css" rel="stylesheet">
+	<link href="../css/reset.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<section id="bubbly" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>心形</summary>
+				<summary>利用正方形和圆形实现</summary>
+				<hgroup class="heartShaped">
+					<h1>.heartShaped</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable=true>
+				.heartShaped{
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform:translate(-50% ,-50%) rotate(45deg);
+					width:140px;
+					line-height: 140px;
+					background:rgba(255,20,147,.85);
+					text-align: center;
+					color:#fff;
+					font-size: 12px;
+				}
+				.heartShaped:after,.heartShaped:before{
+					content:'';
+					position:absolute;
+					width:140px;
+					height:140px;
+					border-radius:50%;
+					background:rgb(255,20,147);
+					left:-70px;
+					top:0px;
+					z-index:-1;
+				}
+				.heartShaped:after{
+					left:0px;
+					top:-70px;
+				}
+
+			</style>
+		</section>
+
+		<!-- 气泡三角形 -->
+		<section id="bubbly" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>气泡三角形</summary>
+				<summary>利用border的transparent属性实现</summary>
+				<hgroup class="bubbly">
+					<h1>.bubbly</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.bubbly{
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:260px;
+					padding:60px 20px;
+					border-radius:.4em;
+					background:#00aabb;
+					color:#fff;
+					text-align: center;
+					font-size:200%;
+				}
+				.bubbly:after{
+					content:'';
+					position:absolute;
+					width:0;
+					height:0;
+					border-top:30px solid #00aabb;
+					border-right:30px solid transparent;
+					border-bottom:30px solid transparent;
+					border-left:30px solid #00aabb;
+					bottom:0;
+					left:50%;
+					margin:0 0 -30px -15px;
+				}
+			</style>
+		</section>
+
+		<section id="bubbly" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>星星</summary>
+				<hgroup class="star">
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.star{
+				  position: absolute;
+				  top:50%;
+				  left:50%;
+				  transform:translate(-50%,-50%);
+				  width: 0;
+				  height: 0;
+				  display: block;
+				  border-left: 40px solid transparent;
+				  border-right: 40px solid transparent;
+				  border-bottom: 90px solid #E91E63;
+				  cursor: pointer;
+				}
+				.star:before{
+				    content: "";
+				    position: absolute;
+				    top: 90px;
+				    left: -90px;
+				    width: 0;
+				    height: 0;
+				    color: #E91E63;
+				    display: block;
+				    border-left:140px solid transparent;
+					border-right:140px solid transparent;
+					border-bottom:90px solid #e91E63;
+				    transform-origin: top center;
+				    transform: rotate(36deg);
+				}
+				.star:after{
+				    content: "";
+				    position: absolute;
+				    top: 90px;
+				    left: -180px;
+				    width: 0;
+				    height: 0;
+				    color: #E91E63;
+				    display: block;
+				    border-left: 12.5px solid transparent;
+				    border-right: 12.5px solid transparent;
+				    border-bottom: 9.08px solid #E91E63;
+				    border-left:140px solid transparent;
+					border-right:140px solid transparent;
+					border-bottom:90px solid #e91E63;
+				    transform-origin: top center;
+				    transform: rotate(-36deg);
+				}
+				.star:hover{
+					transition:all 2s;
+					transform:rotateY(180deg);
+				}
+			</style>
+		</section>
+
+		<!-- notching 切角 -->
+		<section id="notching" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>切角</summary>
+				<summary>使用线性渐变实现</summary>
+				<hgroup class="notching">
+					<h1>.notching</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.notching{
+					position: absolute;
+					top:50%;
+					left: 50%;
+					transform: rotate(-50%,-50%);
+					width:160px;
+					padding:60px 20px;
+					font-size:200%;
+					text-align:center;
+					color:#fff;
+				}
+				.notching{
+					background:
+					linear-gradient(135deg,transparent 10px,deeppink 0 ) top left,
+					linear-gradient(-135deg,transparent 10px,deeppink 0) top right,
+					linear-gradient(45deg,transparent 10px,deeppink 0) bottom left,
+					linear-gradient(-45deg,transparent 10px,deeppink 0)bottom right;
+					background-repeat: no-repeat;
+					background-size:50% 50%;
+				}
+			</style>
+		</section>
+
+		<!-- arc弧形切角 -->
+		<section id="arc" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>弧形切角</summary>
+				<summary>使用径向渐变实现</summary>
+				<hgroup class="src">
+					<h1>.src</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable">
+				.src{
+					position:absolute;
+					left:50%;
+					top:50%;
+					transform:translate(-50%,-50%);
+					width:60px;
+					padding:60px;
+					font-size:200%;
+					text-align: center;
+					color:#fff;
+				}
+				.src{
+					background:
+					radial-gradient(circle at top left,transparent 15px,yellowgreen 0) top left,
+					radial-gradient(circle at top right,transparent 15px,yellowgreen 0) top right,
+					radial-gradient(circle at bottom left,transparent 15px,yellowgreen 0) bottom left,
+					radial-gradient(circle at bottom right,transparent 15px,yellowgreen 0) bottom right;
+					background-size:50% 50%;
+					background-repeat: no-repeat;
+				}
+			</style>
+		</section>
+
+		<!-- pesudo 伪类实现按钮明暗变化 -->
+		<section id="pesudo" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>单个颜色 hover和active实现明暗变化</summary>
+				<summary>利用伪类和透明度实现</summary>
+				<hgroup class="pesudo">
+					<h1>.pesudo</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.pesudo{
+					position:absolute;
+					left:50%;
+					top:50%;
+					transform: translate(-50%,-50%);
+					width:120px;
+					padding:60px;
+					color:#fff;
+					font-size:200%;
+					text-align: center;
+					border-radius:1em;
+					background:#00aabb;
+					cursor:pointer;
+				}
+				.pesudo:before{
+					position:absolute;
+					left:0;right:0;top:0;bottom:0;
+					background:rgba(0,0,0,.1);
+					z-index:-1;
+					border-radius:1em;
+				}
+				.pesudo:hover:before{
+					content:'';
+				}
+			</style>
+		</section>
+
+		<section id="trapezoid" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>梯形</summary>
+				<summary>利用伪类旋转透视实习</summary>
+				<hgroup class="trapezoid">
+					<h1>.trapezoid</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.trapezoid{
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:160px;
+					padding:60px;
+					color:#fff;
+					text-align: center;
+					font-size:200%;
+				}
+				.trapezoid:before{
+					content:'';
+					position: absolute;
+					left:0;right:0;top:0;bottom:0;
+					transform:perspective(40px) scaleY(1.3) rotateX(5deg);
+					transform-origin: bottom;
+					background:deeppink;
+					z-index:-1;
+				}
+			</style>
+		</section>
+
+		<!-- pie 利用伪类、线性渐变、旋转实现饼图 -->
+		<section id="pie" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>饼图</summary>
+				<summary>利用伪类、线性渐变、旋转实现</summary>
+				<hgroup class="pie">
+					<h1>.pie</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.pie{
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:200px;
+					line-height:200px;
+					color:#fff;
+					text-align: center;
+					border-radius:50%;
+					background-color:yellowgreen;
+					overflow: hidden;
+					background-image:linear-gradient(to right,transparent 50%,#065 0);
+					cursor: pointer;
+				}
+				.pie:before{
+					content:'';
+					position: absolute;
+					left:50%;top:0;
+					width:50%;height:100%;
+					z-index:-1;
+					transform: rotate(.1turn);
+					transform-origin: left;
+					background-color:yellowgreen;
+				}
+				.pie:hover:before{
+					transform:rotate(.5turn);
+					transition:all 1s;
+				}
+			</style>
+		</section>
+
+		<!-- parallelogram 伪类加拉伸实现平行四边形 -->
+		<section id="parallelogram" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>平行四边形</summary>
+				<summary>利用伪类和拉伸实现</summary>
+				<hgroup class="parrallelogram">
+					<h1>.parrallelogram</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.parrallelogram{
+					position:absolute;
+					left:50%;
+					top:50%;
+					transform: translate(-50%,-50%);
+					width:280px;line-height: 150px;
+					text-align: center;
+					color:#fff;
+					font-size:200%;
+				}
+				.parrallelogram:before{
+					content:'';
+					position: absolute;
+					left:0;right:0;top:0;bottom:0;
+					background:#00aabb;
+					z-index:-1;
+					transform: skew(0.08turn);
+				}
+			</style>
+		</section>
+
+		<!-- diamond 伪类加拉伸加旋转实现菱形 -->
+		<section id="diamond" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>菱形</summary>
+				<summary>利用伪类、拉伸、旋转实现菱形</summary>
+				<hgroup class="diamond">
+					<h1>.diamond</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.diamond{
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:200px;line-height: 200px;
+					color:#fff;font-size:200%;
+					text-align: center;
+				}
+				.diamond:before{
+					content:'';
+					position: absolute;
+					left:0;right:0;top:0;bottom:0;
+					background: deeppink;
+					z-index:-1;
+					transform:rotate(-45deg);
+				}
+			</style>
+		</section>
+	</div>
+</body>
+</html>
