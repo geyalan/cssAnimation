@@ -371,7 +371,7 @@
 					top:50%;
 					left:50%;
 					transform: translate(-50%,-50%);
-					width:200px;line-height: 200px;
+					width:200px;line-height: 200px; 
 					color:#fff;font-size:200%;
 					text-align: center;
 				}
@@ -385,6 +385,158 @@
 				}
 			</style>
 		</section>
+
+		<!-- corner 切角、伪类、渐变、旋转实现折角 -->
+		<section id="corner" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>折角</summary>
+				<summary>利用切角、伪类、渐变、旋转</summary>
+				<hgroup class="corner">
+					<h1>.corner</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.corner{
+					position:absolute;
+					top:50%;left:50%;
+					transform:translate(-50%,-50%);
+					width:120px;line-height: 120px;
+					padding:40px;
+					text-align: center;
+					color:#fff;
+					font-size:200%;
+					background:linear-gradient(-150deg,transparent 1.5em, yellowgreen  0);
+					border-radius:.5em;
+				}
+				.corner:before{
+ 					content: '';
+ 					position:absolute;
+ 					top:0;right:0;
+ 					width:1.73em;height:3em;
+ 					background: red;
+ 					transform:translateY(-1.3em) rotate(-30deg);
+ 					transform-origin: bottom right;
+ 					border-bottom-left-radius: inherit;
+ 					box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+ 					background:linear-gradient(to left bottom,transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4));
+				}
+			</style>
+		</section>
+
+		<!-- underline background-image 实现下划线 -->
+		<section id="underline" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>下划线</summary>
+				<summary>利用background-image实现</summary>
+				<hgroup class="underline">
+					<h1 class="underline1">.underline1</h1>
+					<h1 class="underline2">.underline2</h1>
+					<h1 class="underline3">.underline3</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.underline{
+					position: absolute;
+					top:50%;left:50%;transform: translate(-50%,-50%);
+					width:400px;height:200px;
+					text-align: center;
+					color:#fff;
+					font-size:200%;
+					background:#00aabb;
+					border-radius:.5em;
+				}
+				.underline1,.underline2,.underline3{
+					cursor:pointer;
+					position:absolute;
+					text-shadow: .1em 0 #00aabb;
+					left:16%;
+					transition: 1s;
+				}
+				.underline1{
+					top:10%;
+					background: linear-gradient(white,white) no-repeat;
+					background-size:100% 1px;
+					background-position:-10em 1.15em;
+				}
+				.underline1:hover{
+					background-position:0 1.15em;
+				}
+				.underline2{
+					top:38%;
+					background:linear-gradient(90deg,white 50%,transparent 0) repeat-x;
+					background-size:.2em 2px;
+					background-position: -3em 1.15em;
+				}
+				.underline2:hover{
+					background-position: 0 1.15em;
+				}
+				.underline3{
+					top:68%;
+					background:linear-gradient(-45deg,transparent 40%,deeppink 0,deeppink 60%,transparent 0) 0 1em,
+							   linear-gradient(45deg,transparent 40%,deeppink 0,deeppink 60%,transparent 0) .1em 1em;
+					background-repeat: repeat-x;
+					background-size:.15em .1em;
+					background-position: -3em 1.15em;
+				}
+				.underline3:hover{
+					background-position:0 1.15em;
+				}
+			</style>
+		</section>
+
+		<!-- spectiveBlur 利用阴影实现背景模糊效果 -->
+		<section id="spectiveBlur" class="code-wrap" style="z-index:100">
+			<div class="css-live-wrap">
+				<summary>spectiveBlur</summary>
+				<summary>实现背景变暗效果（hover按钮触发）</summary>
+				<hgroup class="spectiveBlur">
+					<h1>.spectiveBlur</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.spectiveBlur{
+					position:absolute;
+					left:50%;top:50%;transform: translate(-50%,-50%);
+					width:220px;line-height: 160px;
+					border-radius: 10px;
+					overflow:hidden;
+					background:#E91E63;
+					color:#fff;
+					font-size:200%;
+					text-align: center;
+					cursor: pointer;
+					transition: transform .2s;
+				}
+				.spectiveBlur:hover{
+					box-shadow:0 0 0 1920px rgba(0,0,0,.7);
+	          		transform: translate(-50%, -50%) scale(1.2);
+				}
+			</style>
+		</section>
+
+		<!-- stripe 渐变实现条纹背景图案 -->
+		<section id="stripe" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>条纹背景</summary>
+				<summary>利用渐变实现</summary>
+				<hgroup class="stripe">
+					<h1>.stripe</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.stripe{
+					position:absolute;
+					left:50%;top:50%;
+					width:200px;line-height: 200px;
+					text-align:center;
+					color:#333;
+					font-size:200%;
+					border-radius:.5em;
+					background:repeating-linear-gradient(45deg,#CC9999, #CC9999 15px, #CCCCCC 0, #CCCCCC 30px);
+				}
+			</style>
+		</section>
+		
 	</div>
 </body>
 </html>
