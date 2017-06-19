@@ -693,7 +693,332 @@
 			</style>
 		</section>
 
-		
+		<!-- cloudy 阴影实现多云天气图案 -->
+		<section id="cloudy2" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>多云</summary>
+				<summary>利用线性渐变、阴影、缩放实现</summary>
+				<hgroup class="cloudy2">
+					<h1>.cloudy2</h1>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.cloudy2{
+					position:absolute;
+					left:50%;top:50%;transform: translate(-50%,-50%);
+					width:200px;height:260px;
+					text-align: center;
+					font-size:200%;
+					color:#fff;
+					background:#2eb5e5;
+					border-radius:5%;
+				}
+				.cloudy2:before{
+					content:'';
+					text-indent: 23px;
+					font-size:22px;
+					line-height: 40px;
+					color:#333;
+					position:absolute;
+					height:50px;width:50px;
+					background:#fff;
+					top:55%;left:30%;
+					transform:translate(-50%,-50%);
+					border-radius:50%;
+					z-index:100;
+					box-shadow:
+					#fff 65px -15px 0 -5px,
+					#fff 25px -25px,
+					#fff 30px 10px,
+					#fff 65px 15px 0 -10px,
+					#fff 85px 5px 0 -5px;
+					animation: cloudy2 5s ease-in-out infinite;
+				}
+				.cloudy2:after{
+					content:'';
+					position:absolute;
+					top:45%;left:63%;
+					height:60px;width:60px;
+					background: linear-gradient(180deg,#fe9f38 0%,#f46635 100%);
+					border-radius: 50%;
+					transform: translate(-50%,-50%);
+					box-shadow:0 0 10px 4px #ffa563;
+					animation: cloudy2 10s ease-in-out infinite;
+				}
+				@keyframes cloudy2{
+					50%{
+						transform: translate(-50%,-70%);
+					}
+					100%{
+						transform: translate(-50%,-50%);
+					}
+				}
+			</style>
+		</section>
+
+		<!-- rainy 阴影实现雨天图案 -->
+		<section id="rainy" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>雨</summary>
+				<summary>利用线性渐变、阴影、缩放实现</summary>
+				<hgroup class="rainy-container">
+					<h1>.rainy</h1>
+					<div class="rainy"></div>
+				</hgroup>	
+			</div>
+			<style class="code" contenteditable="true">
+				.rainy-container{
+					position: absolute;
+					left:50%;top:50%;transform: translate(-50%,-50%);
+					width:200px;height:260px;
+					text-align: center;
+					color:#fff;
+					font-size:200%;
+					background:#e6e6e6;
+					border-radius: 5px;
+				}
+				.rainy{
+					position:absolute;
+					width: 3px;
+					height:6px;
+					top:30%;left:50%;
+					background:#ccc;
+					border-radius:50%;
+					animation: rainy_rain .7s infinite linear;
+				}
+				.rainy:before{
+					content:'';
+					color:#333;
+					position:absolute;
+					width:50px;height:50px;
+					top:30px;left:-40px;
+					background:#ccc;
+					transform: translate(-50%,-50%);
+					border-radius: 50%;
+					box-shadow: #ccc 65px -15px 0 -5px,#ccc 25px -25px,#ccc 30px 10px,#ccc 60px 15px 0 -10px,#ccc 85px 5px 0 -5px;
+					animation: cloudy 5s ease-in-out infinite;
+				}
+				.rainy:after{
+					content:'';
+					position:absolute;
+					top:120px;left:50%;
+					height:15px;width:120px;
+					background:rgba(0,0,0,.5);
+					border-radius: 50%;
+					transform:translate(-50%,-50%);
+					animation: cloudy_shadow 5s ease-in-out infinite;
+				}
+				@keyframes cloudy {
+			        50% {
+			            transform: translate(-50%, -70%);
+			        }
+			        100% {
+			            transform: translate(-50%, -50%);
+			        }
+		        }
+		        @keyframes cloudy_shadow {
+		          	50% {
+		            	transform: translate(-50%, -50%) scale(0.8);
+		            	background: rgba(0, 0, 0, .2);
+		         	 }
+		          	100% {
+		            	transform: translate(-50%, -50%) scale(1);
+		            	background: rgba(0, 0, 0, .5);
+		          	}
+		        }
+				@keyframes rainy_rain {
+			          0% {
+			            box-shadow: rgba(0, 0, 0, 0) -10px 30px, rgba(0, 0, 0, 0) 40px 40px, rgba(0, 0, 0, .3) -50px 75px, rgba(0, 0, 0, .3) 55px 50px, rgba(0, 0, 0, .3) -18px 100px, rgba(0, 0, 0, .3) 12px 95px, rgba(0, 0, 0, .3) -31px 45px, rgba(0, 0, 0, .3) 30px 35px;
+			          }
+			          25% {
+			            box-shadow: rgba(0, 0, 0, .3) -10px 45px, rgba(0, 0, 0, .3) 40px 60px, rgba(0, 0, 0, .3) -50px 90px, rgba(0, 0, 0, .3) 55px 65px, rgba(0, 0, 0, 0) -18px 120px, rgba(0, 0, 0, 0) 12px 120px, rgba(0, 0, 0, .3) -31px 70px, rgba(0, 0, 0, .3) 30px 60px;
+			          }
+			          26% {
+			            box-shadow: rgba(0, 0, 0, .3) -10px 45px, rgba(0, 0, 0, .3) 40px 60px, rgba(0, 0, 0, .3) -50px 90px, rgba(0, 0, 0, .3) 55px 65px, rgba(0, 0, 0, 0) -18px 40px, rgba(0, 0, 0, 0) 12px 20px, rgba(0, 0, 0, .3) -31px 70px, rgba(0, 0, 0, .3) 30px 60px;
+			          }
+			          50% {
+			            box-shadow: rgba(0, 0, 0, .3) -10px 70px, rgba(0, 0, 0, .3) 40px 80px, rgba(0, 0, 0, 0) -50px 100px, rgba(0, 0, 0, .3) 55px 80px, rgba(0, 0, 0, .3) -18px 60px, rgba(0, 0, 0, .3) 12px 45px, rgba(0, 0, 0, .3) -31px 95px, rgba(0, 0, 0, .3) 30px 85px;
+			          }
+			          51% {
+			            box-shadow: rgba(0, 0, 0, .3) -10px 70px, rgba(0, 0, 0, .3) 40px 80px, rgba(0, 0, 0, 0) -50px 45px, rgba(0, 0, 0, .3) 55px 80px, rgba(0, 0, 0, .3) -18px 60px, rgba(0, 0, 0, .3) 12px 45px, rgba(0, 0, 0, .3) -31px 95px, rgba(0, 0, 0, .3) 30px 85px;
+			          }
+			          75% {
+			            box-shadow: rgba(0, 0, 0, .3) -10px 95px, rgba(0, 0, 0, .3) 40px 100px, rgba(0, 0, 0, .3) -50px 60px, rgba(0, 0, 0, 0) 55px 95px, rgba(0, 0, 0, .3) -18px 80px, rgba(0, 0, 0, .3) 12px 70px, rgba(0, 0, 0, 0) -31px 120px, rgba(0, 0, 0, 0) 30px 110px;
+			          }
+			          76% {
+			            box-shadow: rgba(0, 0, 0, .3) -10px 95px, rgba(0, 0, 0, .3) 40px 100px, rgba(0, 0, 0, .3) -50px 60px, rgba(0, 0, 0, 0) 55px 35px, rgba(0, 0, 0, .3) -18px 80px, rgba(0, 0, 0, .3) 12px 70px, rgba(0, 0, 0, 0) -31px 25px, rgba(0, 0, 0, 0) 30px 15px;
+			          }
+			          100% {
+			            box-shadow: rgba(0, 0, 0, 0) -10px 120px, rgba(0, 0, 0, 0) 40px 120px, rgba(0, 0, 0, .3) -50px 75px, rgba(0, 0, 0, .3) 55px 50px, rgba(0, 0, 0, .3) -18px 100px, rgba(0, 0, 0, .3) 12px 95px, rgba(0, 0, 0, .3) -31px 45px, rgba(0, 0, 0, .3) 30px 35px;
+			          }
+       			 }
+			</style>
+		</section>
+
+		<!-- breeze 利用border、transparent实现微风图案 -->
+		<section id="breeze" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>微风</summary>
+				<summary>利用border、transparent实现</summary>
+				<hgroup class="breeze-container">
+					<h1>.breeze</h1>
+					<div class="breeze"></div>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.breeze-container{
+					position: absolute;
+					top:50%;left:50%;transform: translate(-50%,-50%);
+					width:200px;height:260px;
+					background:#00bbff;
+					color:#fff;
+					text-align: center;
+					font-size:200%;
+					border-radius:5px;
+				}
+				.breeze-container:before{
+					content:'';
+					position:absolute;
+					top:58%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:6px;height:70px;
+					background: #fff;
+				}
+				.breeze{
+					position: absolute;
+					top:30%;
+					left:50%;
+					transform: translate(-50%,-50%) rotate(1deg);
+					border-bottom:60px solid #fff;
+          			border-left:5px solid transparent;
+          			border-right:5px solid transparent;
+          			transform-origin:50.5% 62px;
+          			animation: weedmill 12s linear infinite;
+				}
+				.breeze:before{
+					position:absolute;
+					content: '';
+					top:75px;left:-59px;
+					border-right:60px solid #fff;
+					border-top:5px solid transparent;
+					border-bottom: 5px solid transparent;
+					transform: rotate(-30deg);
+				}
+				.breeze:after{
+					position:absolute;
+					content:'';
+					top:75px;left:-1px;
+					border-left:60px solid #fff;
+					border-top:5px solid transparent;
+					border-bottom:5px solid transparent;
+					transform:rotate(30deg);
+				}
+				@keyframes weedmill{
+					0%{
+						transform: translate(-50%,-50%) rotate(0deg);
+					}
+					100%{
+						transform: translate(-50%,-50%) rotate(360deg);
+					}
+				}
+			</style>
+		</section>
+
+		<!-- rainbow 利用border、box-shadow实现彩虹 -->
+		<section id="rainbow" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>彩虹</summary>
+				<summary>利用border、box-shadow实现</summary>
+				<hgroup class="rainbow-container">
+					<h1>.rainbow</h1>
+					<div class="rainbow"></div>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				.rainbow-container{
+					position: absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:200px;
+					height:260px;
+					color:#fff;
+					text-align: center;
+					font-size:200%;
+					background:#f3d166;
+					border-radius:5px;
+				}
+				.rainbow{
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:1px; height:1px;
+				}
+				.rainbow:before{
+					content:'';
+					position: absolute;
+					top:50%;left:50%;
+					transform: translate(-50%,-50%) rotate(45deg);
+					width:70px;height:70px;
+					border-radius:100px 0 0 0;
+					box-shadow:
+					#f44336 -2px -2px 0 1px,
+					#ff9800 -4px -4px 0 3px,
+					#ffeb3b -6px -6px 0 5px,
+					#8bc34a -8px -8px 0 7px,
+					#00bcd4 -10px -10px 0 9px,
+					#2196F3 -12px -12px 0 11px,
+            		#9C27B0 -14px -14px 0 13px;
+            		animation: rainbow 5s ease-in-out infinite;
+				}
+				.rainbow:after{
+					position: absolute;
+					content: '';
+					top:70px;
+					left:50%;
+					height:15px;
+					width:120px;
+					background: rgba(0,0,0,.5);
+					border-radius:50%;
+					transform: translate(-50%,-50%);
+					animation: rainbow-shadow 5s ease-in-out infinite;
+				}
+				@keyframes rainbow{ 
+					50%{
+						transform: translate(-50%,-50%) rotate(30deg);
+					}
+					100%{
+						transform: translate(-50%,-50%) rotate(45deg);
+					}
+				}
+				@keyframes rainbow-shadow{
+					50%{
+						transform: translate(-50%,-50%) scale(0.8);
+						background: rgba(0,0,0,.2);
+					}
+					100%{
+						transform: translate(-50%,-50%) scale(1);
+						background:rgba(0,0,0,.5);
+					}
+				}
+			</style>
+		</section>
+
+		<section id="starry" class="code-wrap">
+			<div class="css-live-wrap">
+				<summary>璀璨星空</summary>
+				<summary>利用box-shadow实现</summary>
+				<hgroup class="starry-container">
+					<h1>.starry</h1>
+					<div class="starry"></div>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+				
+			</style>
+		</section>
 	</div>
 </body>
 </html>
